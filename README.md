@@ -69,7 +69,7 @@ Click **Save & Apply** to activate changes.
 
 **Note:** LuCI interface requires standard OpenWrt or newer GL.iNet firmware. Older GL.iNet firmware can still use UCI configuration (see below).
 
-### Older Routers (Universal) -> Via UCI Command Line 
+### Older Routers/Any OpenWRT Router -> Via UCI Command Line 
 
 ```sh
 # Enable the service
