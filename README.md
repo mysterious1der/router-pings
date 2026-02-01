@@ -1,6 +1,6 @@
 # Healthchecks.io Client for OpenWrt and GL.iNet
 
-A lightweight [Healthchecks.io](https://healthchecks.io/) heartbeat monitoring client for OpenWrt routers, with optional LuCI web interface.
+A lightweight [Healthchecks.io](https://healthchecks.io/) heartbeat monitoring client for OpenWrt and GL.iNet routers, with optional LuCI web interface.
 
 ## Features
 
