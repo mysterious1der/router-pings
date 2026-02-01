@@ -1,3 +1,4 @@
+![Alt text](/screenshot.png?raw=true "Screenshot of LuCI Plugin")
 # Healthchecks.io Client for OpenWrt and GL.iNet
 
 A lightweight [Healthchecks.io](https://healthchecks.io/) heartbeat monitoring client for OpenWrt and GL.iNet routers, with optional LuCI web interface.
