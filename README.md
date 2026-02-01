@@ -21,8 +21,8 @@ Download and install both packages:
 
 ```sh
 # SSH into router and download packages
-wget https://github.com/mysterious1der/router-pings/releases/latest/download/healthchecks_0.1.1-1_all.ipk
-wget https://github.com/mysterious1der/router-pings/releases/latest/download/luci-app-healthchecks_0.1.1-1_all.ipk
+wget https://github.com/mysterious1der/router-pings/raw/refs/heads/main/releases/healthchecks_0.1.1-1_all.ipk
+wget https://github.com/mysterious1der/router-pings/raw/refs/heads/main/releases/luci-app-healthchecks_0.1.1-1_all.ipk
 
 # Install
 opkg update
