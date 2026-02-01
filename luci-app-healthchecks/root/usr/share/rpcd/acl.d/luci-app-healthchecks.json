@@ -1,0 +1,11 @@
+{
+    "luci-app-healthchecks": {
+        "description": "Grant access to healthchecks UCI config",
+        "read": {
+            "uci": [ "healthchecks" ]
+        },
+        "write": {
+            "uci": [ "healthchecks" ]
+        }
+    }
+}

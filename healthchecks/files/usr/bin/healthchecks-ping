@@ -1,0 +1,47 @@
+#!/bin/sh
+
+. /lib/functions.sh
+
+logger -t healthchecks "Service started"
+
+# Main loop
+while true; do
+    # Re-read config on each iteration
+    enabled=""
+    url=""
+    interval_minutes=""
+    
+    get_config() {
+        config_get enabled "$1" enabled 0
+        config_get url "$1" url ""
+        config_get interval_minutes "$1" interval_minutes 5
+    }
+    
+    config_load healthchecks
+    config_foreach get_config healthchecks
+    
+    # Skip if disabled
+    if [ "$enabled" != "1" ]; then
+        logger -t healthchecks "Service disabled, sleeping 60s"
+        sleep 60
+        continue
+    fi
+    
+    # Skip if no URL
+    if [ -z "$url" ]; then
+        logger -t healthchecks "No URL configured, sleeping 60s"
+        sleep 60
+        continue
+    fi
+    
+    # Ping
+    if wget -q -O /dev/null "$url" 2>&1; then
+        logger -t healthchecks "Ping successful (interval: ${interval_minutes}m)"
+    else
+        logger -t healthchecks "Ping failed"
+    fi
+    
+    # Sleep for configured interval
+    interval_seconds=$((interval_minutes * 60))
+    sleep "$interval_seconds"
+done
